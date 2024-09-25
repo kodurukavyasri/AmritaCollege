@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int l,b,i,j;
+    printf("Enter the length of the rectangle");
+    scanf("%d",&l);
+
+    printf("Enter the bredth of the rectangle");
+    scanf("%d",&b);
+
+    for(i=0;i<l;i++)
+    {
+        for(j=0;j<b;j++)
+        {
+            if (i==0||i==l-1||j==0||j==b-1)
+            printf("#\t");
+        else
+            printf("\t");
+        }
+
+        printf("\t");
+    }
+
+
+    return 0;
+}

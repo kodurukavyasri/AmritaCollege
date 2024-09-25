@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+int main(){
+
+    char letter;
+
+    printf("Enter the smaal letter");
+    scanf("%c", &letter);
+
+    printf("The capital letter is %c", letter - 32);
+
+    return 0;
+}

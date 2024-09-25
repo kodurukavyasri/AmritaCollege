@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main()
+{
+    int num;
+    printf("please enter a number either positive or nagative ");
+    scanf("%d", num);
+
+    if (num<0)
+    printf("the absolute value is |%d|\n," (-1) * num);
+
+    else printf("the absolute value is %d", num);
+
+    return 0;
+
+}
+
+
+
+
+
+
+
