@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Click Example</title>
+</head>
+<body>
+
+  <script>
+    // 1. Create the button element
+    const button = document.createElement('button');
+
+    // 2. Set the button's text content
+    button.textContent = 'Click Me!';
+
+    // 3. Add a click event listener to the button
+    button.addEventListener('click', () => {
+      console.log("Button clicked!");
+    });
+
+    // 4. Append the button to the document (you can append it to any existing element)
+    document.body.appendChild(button);
+  </script>
+
+</body>
+</html>
