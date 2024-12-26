@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Objects</title>
+</head>
+<body>
+    <h2>Compare Two Objects</h2>
+    <button onclick="compareObjects()">Compare Objects</button>
+    <p id="objectComparisonResult"></p>
+
+    <script>
+        function areObjectsEqual(obj1, obj2) 
+        {
+            for (let key in obj2) 
+            {
+                if (obj2.hasOwnProperty(key))
+                 {
+                    if (obj1[key] !== obj2[key])
+                     {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function compareObjects() 
+        {
+            let objA = { a: 1, b: 2, c: 3 };
+            let objB = { a: 3, b: 2, c: 3 };
+            let result = areObjectsEqual(objA, objB);
+            document.getElementById('objectComparisonResult').innerHTML = `Objects are equal: ${result}`;
+        }
+    </script>
+</body>
+</html>

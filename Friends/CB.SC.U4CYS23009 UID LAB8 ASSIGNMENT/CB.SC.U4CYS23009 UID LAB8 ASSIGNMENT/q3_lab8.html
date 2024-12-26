@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert Number to Array of Digits</title>
+</head>
+<body>
+    <h2>Convert Number into Array of Digits</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number" />
+    <button onclick="convertToArray()">Convert to Array</button>
+    <p id="numberArrayResult"></p>
+
+    <script>
+        function numberToArrayOfDigits(num) 
+        {
+            return num.toString().split('').map(Number);
+        }
+
+        function convertToArray() {
+            let num = document.getElementById('numberInput').value;
+            let result = numberToArrayOfDigits(Number(num));
+            document.getElementById('numberArrayResult').innerHTML = `Array of digits: [${result.join(', ')}]`;
+        }
+    </script>
+</body>
+</html>

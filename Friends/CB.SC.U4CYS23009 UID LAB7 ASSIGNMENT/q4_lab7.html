@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdown Toggle</title>
+    <style>
+        #dropdownMenu {
+            display: none;
+            list-style-type: none;
+            padding: 0;
+        }
+        #dropdownMenu li {
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <button id="dropdownButton">Toggle Dropdown</button>
+    <ul id="dropdownMenu">
+        <li>Food</li>
+        <li>Movies</li>
+        <li>Shopping</li>
+    </ul>
+
+    <script>
+        const dropdownButton = document.getElementById("dropdownButton");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        dropdownButton.addEventListener("click", function() {
+            if (dropdownMenu.style.display === "none") {
+                dropdownMenu.style.display = "block";
+            } else {
+                dropdownMenu.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

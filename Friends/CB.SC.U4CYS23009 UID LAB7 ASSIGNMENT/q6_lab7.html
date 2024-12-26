@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Double Click Event</title>
+</head>
+<body>
+    <div id="doubleClickDiv" style="width:200px; height:100px; border:1px solid black;">
+        Double-click me!
+    </div>
+
+    <script>
+        const doubleClickDiv = document.getElementById("doubleClickDiv");
+
+        doubleClickDiv.addEventListener("dblclick", function() {
+            alert("Element was double-clicked!");
+        });
+    </script>
+</body>
+</html>

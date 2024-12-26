@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Whole Page Mouse Enter Event</title>
+    <style>
+        body {
+            height: 100vh; 
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+        document.body.addEventListener("mouseenter", function() {
+            document.body.style.backgroundColor = "lightgreen"; 
+        });
+
+        
+        document.body.addEventListener("mouseleave", function() {
+            document.body.style.backgroundColor = "green"; 
+        });
+    </script>   
+</body>
+</html>

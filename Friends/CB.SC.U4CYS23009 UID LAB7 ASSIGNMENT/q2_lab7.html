@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Image on Button Click</title>
+</head>
+<body>
+    <button id="bgButton">Set Background Image</button>
+
+    <script>
+        const bgButton = document.getElementById("bgButton");
+        bgButton.addEventListener("click", function() {
+            document.body.style.backgroundImage = "url('Nature.jpg')";
+            document.body.style.backgroundSize = "cover";  
+        });
+    </script>
+</body>
+</html>

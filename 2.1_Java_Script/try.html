@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input type="number" id="NumInput" placeholder="Enter a number">
+
+    <button onclick="n()">Find sum of n numbers</button>
+
+    <p id="s"></p>
+
+    <script>
+
+        function n() 
+        {
+            let num = eval(getElementById('NumInput').value);
+            let s = (n(n+1))/2
+            let result = eval(getElementById('s').value);
+            eval(getElementById('NumInput').innerHTML) = `Sum of ${num} is: ${result}`;
+        }
+    </script>
+</body>
+</html>
