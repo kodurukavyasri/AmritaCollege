@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>23024 UID Lab 7 Q5</title>
+    <style>
+        .dropdown {
+            margin: 20px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdown">
+    <label for="colorSelect">Choose a background color:</label>
+    <select id="colorSelect">
+        <option value="">--Select a color--</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="orange">Orange</option>
+        <option value="purple">Purple</option>
+        <option value="pink">Pink</option>
+    </select>
+</div>
+
+<script>
+    const colorSelect = document.getElementById('colorSelect');
+    colorSelect.addEventListener('change', function() {
+        document.body.style.backgroundColor = this.value;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            width: 300px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green */
+        }
+
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="result">Comparison result will be displayed here</h1>
+
+<div>
+    <h2>Object 1</h2>
+    <input type="text" id="obj1" placeholder='{"key1": "value1", "key2": "value2"}'>
+    
+    <h2>Object 2</h2>
+    <input type="text" id="obj2" placeholder='{"key1": "value1", "key2": "value2"}'>
+    
+    <button onclick="compareObjects()">Compare Objects</button>
+</div>
+
+<script>
+    function compareObjects() {
+        const obj1 = JSON.parse(document.getElementById('obj1').value);
+        const obj2 = JSON.parse(document.getElementById('obj2').value);
+        
+        const result = areObjectsEquivalent(obj1, obj2);
+        
+        document.getElementById('result').textContent = result 
+            ? "The objects have equivalent property values." 
+            : "The objects do not have equivalent property values.";
+    }
+
+    function areObjectsEquivalent(obj1, obj2) {
+        // Check if both are objects
+        if (typeof obj1 !== 'object' || typeof obj2 !== 'object' || obj1 === null || obj2 === null) {
+            return false;
+        }
+
+        // Get keys of both objects
+        const keys1 = Object.keys(obj1);
+        const keys2 = Object.keys(obj2);
+
+        // Check if the number of keys is the same
+        if (keys1.length !== keys2.length) {
+            return false;
+        }
+
+        // Check for equivalent property values
+        for (let key of keys1) {
+            if (obj1[key] !== obj2[key]) {
+                return false; // Values are not equal
+            }
+        }
+
+        return true; // All values are equal
+    }
+</script>
+
+</body>
+</html>

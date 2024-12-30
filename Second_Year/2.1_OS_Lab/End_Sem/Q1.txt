@@ -1,0 +1,14 @@
+Qa. mkdir OSEndSem
+Qb. cd OSEndSem
+    touch details.txt
+Qc. echo "Full Name : Koduru Kavya Sri" > details.txt  
+    echo "Roll NO : CB.SC.U4CYS23024" >> details.txt    
+    echo "Home Town Name : Hyderabad" >> details.txt    
+
+    cat details.txt
+
+Qd. mkdir Question1
+    mv details.txt Question1/
+Qe. chmod 734 details.txt
+Qf. cp -r Question1 Q1
+Qg. find /var -type f -name "*.log"

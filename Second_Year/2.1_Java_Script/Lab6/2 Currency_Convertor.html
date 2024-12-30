@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>23024 Lab 6 Q2</title>
+<style>
+  body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .converter {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  select {
+    width: 150px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+  }
+
+  input[type="number"] {
+    width: 100px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="converter">
+    <h2>Currency Converter</h2>
+    <input type="number" id="amount" placeholder="Enter Amount">
+    <br>
+    <select id="fromCurrency">
+      <option value="INR">Indian Rupee (INR)</option>
+      <option value="USD">US Dollar (USD)</option>
+      <option value="EUR">Euro (EUR)</option>
+    </select>
+    <br>
+    <select id="toCurrency">
+      <option value="INR">Indian Rupee (INR)</option>
+      <option value="USD">US Dollar (USD)</option>
+      <option value="EUR">Euro (EUR)</option>
+    </select>
+    <br>
+    <button onclick="convert()">Convert</button>
+    <h2 id="result"></h2>
+  </div>
+
+  <script>
+    function convert() {
+      const amount = parseFloat(document.getElementById("amount").value);
+      const fromCurrency = document.getElementById("fromCurrency").value;
+      const toCurrency = document.getElementById("toCurrency").value;
+
+      let result = 0;
+
+      // Example conversion rates (replace with actual live rates)
+      const rates = {
+        INR: {
+          USD: 0.012,
+          EUR: 0.011
+        },
+        USD: {
+          INR: 82.34,
+          EUR: 0.92
+        },
+        EUR: {
+          INR: 90.12,
+          USD: 1.09
+        }
+      };
+
+      if (fromCurrency === toCurrency) {
+        result = amount; // Same currency, no conversion
+      } else {
+        result = amount * rates[fromCurrency][toCurrency];
+      }
+
+      document.getElementById("result").innerHTML = 
+        `${amount.toFixed(2)} ${fromCurrency} = ${result.toFixed(2)} ${toCurrency}`;
+    }
+  </script>
+</body>
+</html>

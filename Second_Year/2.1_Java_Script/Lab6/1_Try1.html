@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>23024 Lab6 Q1</title>
+    </head>
+    <body>
+
+        <div class="calculator">
+            <h2>Calculator</h2>
+            <input type="number" id="num1" placeholder="Enter First Number">
+            <input type="number" id="num2" placeholder="Enter First Number">
+            <br>
+            <button onclick="Add()">Addition</button>
+            <button onclick="Subtraction()">Subtraction</button>
+            <button onclick="Multiplication()">Multiplication</button>
+            <button onclick="Division()">Division</button>
+            <button onclick="Division1()">Division1</button>
+            <h1 id="result">b</h1>
+        </div> 
+
+        <script>
+            
+            function Add(){
+                let num1= parseFloat(document.getElementById("num1").value);
+                let num2= parseFloat(document.getElementById("num2").value);
+
+                let result= num1+num2;
+                document.getElementById("result").innerHTML = result;
+            }
+
+            function Subtraction(){
+                let num1= parseFloat(document.getElementById("num1").value);
+                let num2= parseFloat(document.getElementById("num2").value);
+
+                let result= num1-num2;
+                document.getElementById("result").innerHTML = result;
+            }
+
+            function Multiplication(){
+                let num1= parseFloat(document.getElementById("num1").value);
+                let num2= parseFloat(document.getElementById("num2").value);
+
+                let result= num1*num2;
+                document.getElementById("result").innerHTML = result;
+            }
+
+            function Division1(){
+                let num1= parseFloat(document.getElementById("num1").value);
+                let num2= parseFloat(document.getElementById("num2").value);
+
+                let result= num1/num2;
+                document.getElementById("result").innerHTML = result;
+            }
+
+            function Division(){
+                let num1= parseFloat(document.getElementById("num1").value);
+                let num2= parseFloat(document.getElementById("num2").value);
+
+                let result = 0;
+                if (num2 == 0) {
+                    result = "invalid"
+                } else {
+                    result= num1/num2;
+                }
+
+                document.getElementById("result").innerHTML = result;
+            }
+            
+        </script>
+    </body>
+</html>

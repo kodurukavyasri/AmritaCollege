@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>23024 UID Lab 7 Q3</title>
+</head>
+<body>
+
+    <button id="myButton">Click Me!</button>
+    <div id="messageContainer"></div>
+
+    <script>
+        const button = document.getElementById('myButton');
+        const messageContainer = document.getElementById('messageContainer');
+
+        button.addEventListener('click', function() {
+            const newMessage = document.createElement('p');
+            newMessage.textContent = 'Button is finally clicked!';
+            messageContainer.appendChild(newMessage);
+        });
+    </script>
+
+</body>
+</html>

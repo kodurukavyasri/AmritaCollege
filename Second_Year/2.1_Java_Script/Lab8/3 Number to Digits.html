@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>23024 Lab8 Q3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green */
+        }
+
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="result">Array of digits will be displayed here</h1>
+
+<div>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="convertToDigits()">Convert to Digits</button>
+</div>
+
+<script>
+    function convertToDigits() {
+        const number = document.getElementById('numberInput').value;
+        const digitsArray = Array.from(String(number), Number);
+        document.getElementById('result').textContent = `Array of digits: [${digitsArray.join(', ')}]`;
+    }
+</script>
+
+</body>
+</html>

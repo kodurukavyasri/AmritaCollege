@@ -1,0 +1,27 @@
+<!--Use "backgroundImage" property of JS to set background image to webpage based on button Click Event-->
+
+<!DOCTYPE html>
+<head>
+    <title>23024 UID Lab 7 Q2</title>
+</head>
+<body>
+
+<button id="changeImageButton">Change Amrita Campus Image</button>
+
+<script>
+    const button = document.getElementById('changeImageButton');
+    let currentImage = 0;
+
+    button.addEventListener('click', () => {
+        // using modulus logic to switch between 2 images
+        currentImage = (currentImage+1)% 2; 
+        const images = [
+            'https://webfiles.amrita.edu/2021/10/YENQvEt8-ettimadai-3-470x285-1.jpg',
+            'https://webfiles.amrita.edu/2021/09/TTSBJwT3-Ettimadai-1-1384.jpg'
+        ];
+        document.body.style.backgroundImage = `url(${images[currentImage]})`;
+    });
+</script>
+
+</body>
+</html>

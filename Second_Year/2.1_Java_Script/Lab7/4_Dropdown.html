@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>23024 UID Lab 7 Q4</title>
+    <style>
+        /* Basic styling for the dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none; /* Hidden by default */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .show {
+            display: block; /* Show the dropdown content */
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdown">
+    <button id="dropdownButton">Select an Amrita School</button>
+    <div id="dropdownMenu" class="dropdown-content">
+        <a href="#">Amrita School Of Computing</a>
+        <a href="#">Amrita School of Engineering</a>
+        <a href="#">Amrita School of Artificial Intelligence</a>
+    </div>
+</div>
+
+<script>
+    // Get references to the button and dropdown menu
+    const dropdownButton = document.getElementById('dropdownButton');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    // Add click event listener to the button
+    dropdownButton.addEventListener('click', function() {
+        // Toggle the 'show' class to show/hide the dropdown menu
+        dropdownMenu.classList.toggle('show');
+    });
+
+    // Close the dropdown if the user clicks outside of it
+    window.addEventListener('click', function(event) {
+        if (!event.target.matches('#dropdownButton')) {
+            if (dropdownMenu.classList.contains('show')) {
+                dropdownMenu.classList.remove('show');
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

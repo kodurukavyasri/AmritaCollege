@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>23024 Lab8 Q1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin: 5px;
+            width: 100px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green */
+        }
+
+        h1 {
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="result">Factorial will be displayed here</h1>
+
+<div>
+    <input type="number" id="numberInput" placeholder="Enter a number" min="0">
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+</div>
+
+<script>
+    function calculateFactorial() {
+        const number = parseInt(document.getElementById('numberInput').value);
+        
+        if (isNaN(number) || number < 0) {
+            document.getElementById('result').textContent = "Please enter a non-negative integer.";
+            return;
+        }
+
+        const factorial = factorialFunction(number);
+        document.getElementById('result').textContent = `Factorial of ${number} is ${factorial}`;
+    }
+
+    // Recursive function to find factorial
+    function factorialFunction(n) {
+        if (n === 0 || n === 1) {
+            return 1;
+        }
+        return n * factorialFunction(n - 1); 
+    }
+</script>
+
+</body>
+</html>

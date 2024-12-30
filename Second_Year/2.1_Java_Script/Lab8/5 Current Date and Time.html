@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Day and Time</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green */
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="dateTimeDisplay">Current Day and Time will be displayed here</h1>
+<button onclick="displayDateTime()">Show Current Day and Time</button>
+
+<script>
+    function displayDateTime() {
+        const now = new Date();
+        
+        // Define options for formatting
+        const options = { 
+            weekday: 'long', // Full name of the day
+            year: 'numeric', 
+            month: 'long', // Full name of the month
+            day: 'numeric', 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit',
+            hour12: true // 12-hour format
+        };
+
+        // Format the date and time
+        const formattedDateTime = now.toLocaleString('en-US', options);
+
+        // Display the result
+        document.getElementById('dateTimeDisplay').textContent = `Current Day and Time: ${formattedDateTime}`;
+    }
+</script>
+
+</body>
+</html>
