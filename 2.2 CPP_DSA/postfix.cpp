@@ -30,6 +30,6 @@ int evaluatePostfix(const string & expr){
 
 int main(){
     string postfixExpr = "3 4 + 2 * 7 /";
-    cout << "Result of postfix evaluation:" << evaluatepostfix(postfixExpr) << endl;
+    cout << "Result of postfix evaluation:" << evaluatePostfix(postfixExpr) << endl;
     return 0;
 }
